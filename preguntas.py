@@ -80,7 +80,7 @@ def pregunta_03():
     from sklearn.preprocessing import OneHotEncoder
     import numpy as np
 
-    pipeline = ____(
+    pipeline = Pipeline(
         steps=[
             # Paso 1: Construya un column_transformer que aplica OneHotEncoder a las
             # variables categóricas, y no aplica ninguna transformación al resto de
@@ -103,14 +103,14 @@ def pregunta_03():
             ),
             # Paso 3: Construya un modelo de regresión lineal.
             (
-                "____",
+                "linearReg",
                 LinearRegression(),
             ),
         ],
     )
 
     # Cargua de las variables.
-    X_train, _, y_train, _ = pregunta_02()
+    X_train, X_test, y_train, y_test = pregunta_02()
 
     # Defina un diccionario de parámetros para el GridSearchCV. Se deben
     # considerar valores desde 1 hasta 11 regresores para el modelo
